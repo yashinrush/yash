@@ -1,0 +1,133 @@
+________________________________________
+🟣 Unit I: Hashing
+1.	What is hashing?
+o	Hashing turns a key into a number that tells us where to store or find data in a table.
+2.	What is a hash function?
+o	A hash function converts the key into a hash value, which helps us find data quickly in a table.
+3.	What is a good property of a hash function?
+o	It should be quick, return a unique value for each key, and spread the data evenly across the table.
+4.	What are collisions? How are they resolved?
+o	A collision happens when two keys get the same hash value. It can be solved by using techniques like chaining (linking the items) or open addressing (finding another space in the table).
+5.	What is open addressing vs. chaining?
+o	Open addressing stores collided data inside the table itself.
+o	Chaining uses linked lists or another data structure to store collided items outside the table.
+6.	What is rehashing? When do we need it?
+o	Rehashing is when we resize the table to keep it efficient, done when the table is too full (high load factor).
+7.	What is load factor?
+o	Load factor is the number of elements in the hash table divided by the table size. It helps decide when to resize the table.
+8.	What are examples of hash functions (division, multiplication, mid-square, folding)?
+o	Examples are methods to compute the hash value:
+	Division: Take the key mod table size.
+	Multiplication: Use a constant to get a fractional value.
+	Mid-square: Square the key and take the middle part.
+	Folding: Break the key into parts and add them.
+9.	What is extendible hashing?
+o	It's a way to grow or shrink the hash table dynamically, which helps keep it efficient when the number of entries changes.
+________________________________________
+🟣 Unit II: Graphs
+1.	What is a graph? Types (directed, undirected)?
+o	A graph is a collection of nodes (vertices) connected by edges.
+	Directed: Edges have a direction (one-way).
+	Undirected: Edges don't have a direction (two-way).
+2.	What is an adjacency matrix? Adjacency list?
+o	Adjacency matrix: A table where rows and columns represent nodes, and values show if an edge exists.
+o	Adjacency list: A list for each node, showing which other nodes it's connected to.
+3.	How does BFS (Breadth-First Search) work?
+o	BFS explores nodes level by level, starting from a source node, using a queue to manage the nodes to visit next.
+4.	How does DFS (Depth-First Search) work?
+o	DFS explores as far as possible along one path before backtracking, using a stack (or recursion).
+5.	What is a minimum spanning tree?
+o	It's a tree that connects all nodes in a graph with the minimum total edge weight.
+6.	What’s the difference between Prim’s and Kruskal’s algorithms?
+o	Prim’s grows the tree by adding the smallest edge from the visited nodes.
+o	Kruskal’s adds the smallest edge from anywhere in the graph, as long as it doesn't form a cycle.
+
+
+7.	What is Dijkstra’s algorithm used for?
+o	Dijkstra’s finds the shortest path from a starting node to all other nodes in a graph with non-negative edge weights.
+8.	What is the Floyd-Warshall algorithm?
+o	Floyd-Warshall finds the shortest paths between all pairs of nodes in a graph.
+9.	What is topological sorting, and where is it used?
+o	It's a way to order nodes in a Directed Acyclic Graph (DAG) so that for every edge u → v, u comes before v. It's used for task scheduling.
+________________________________________
+🟣 Unit III: Trees
+1.	What is a binary tree?
+o	A tree where each node has at most two children.
+2.	What are the types of tree traversals? (inorder, preorder, postorder)
+o	Inorder: Left → Root → Right.
+o	Preorder: Root → Left → Right.
+o	Postorder: Left → Right → Root.
+3.	What’s the difference between recursive and non-recursive traversal?
+o	Recursive uses function calls to visit nodes.
+o	Non-recursive uses a stack or queue to visit nodes.
+4.	What is a Huffman tree used for?
+o	It's used in data compression, where frequent symbols get shorter codes and rare symbols get longer codes.
+5.	What is a binary search tree (BST)?
+o	A binary tree where left children are smaller, and right children are bigger than the parent node.
+6.	What is a threaded binary tree?
+o	It's a binary tree where empty child pointers are replaced by pointers to the next node in an inorder traversal.
+
+7.	How is insertion and deletion done in a threaded BST?
+o	Insertion and deletion follow standard BST procedures, with updates to the threaded pointers to maintain the inorder structure.
+________________________________________
+🟣 Unit IV: Search Trees
+1.	What is a symbol table?
+o	A data structure that stores key-value pairs, often used to store variable names in compilers.
+2.	What is a static vs. dynamic tree table?
+o	Static: Size is fixed.
+o	Dynamic: Size changes as needed.
+3.	What is an Optimal Binary Search Tree (OBST)?
+o	OBST minimizes the search cost by arranging nodes based on the frequency of access.
+4.	How is OBST related to dynamic programming?
+o	OBST uses dynamic programming to find the best arrangement of keys based on access probabilities.
+5.	What is an AVL tree?
+o	An AVL tree is a self-balancing binary search tree where the height difference between left and right subtrees is at most 1.
+6.	What is a Red-Black tree?
+o	A Red-Black tree is a self-balancing binary search tree with color properties to ensure balance during insertions and deletions.
+7.	What is a splay tree?
+o	A splay tree is a self-adjusting binary search tree where recently accessed nodes are moved to the root.
+8.	What is a K-dimensional tree?
+o	A K-d tree is a tree used for organizing points in K-dimensional space, mainly for range and nearest neighbor queries.
+________________________________________
+🟣 Unit V: Indexing & Multiway Trees
+1.	What is indexing in databases?
+o	Indexing is a way to quickly locate and access data in a database without having to search through every record.
+2.	What are primary, secondary, dense, sparse indexes?
+o	Primary index: Based on the primary key.
+o	Secondary index: Based on non-primary keys.
+o	Dense index: Has an index entry for every record.
+o	Sparse index: Has index entries for only some records.
+3.	What is a B-Tree? Why is it used?
+o	A B-Tree is a balanced tree used in databases and filesystems for efficient searching, insertion, and deletion.
+4.	What is a B+ Tree? How is it different from a B-Tree?
+o	A B+ Tree stores all data in the leaves and internal nodes store keys. It’s better for range queries than a B-Tree.
+5.	What is a Trie tree? Where is it used?
+o	A Trie is a tree used to store strings, where each node represents a character. It’s used in autocomplete and dictionary lookups.
+6.	What is the time complexity of search in B-Tree, B+ Tree, and Trie?
+o	B-Tree: O(log n)
+o	B+ Tree: O(log n)
+o	Trie: O(m), where m is the length of the string being searched.
+________________________________________
+
+🟣 Unit VI: File Organization
+1.	Why do we need file organization?
+o	To store and retrieve data efficiently, saving time and space.
+2.	What is sequential file organization?
+o	Records are stored in a sorted sequence and accessed in that order.
+3.	What is direct access file organization?
+o	Allows random access to records, where any record can be retrieved directly.
+
+4.	What is indexed sequential file organization?
+o	Combines sequential access with an index to speed up searches.
+5.	What is a multi-list file?
+o	A file with multiple lists for different attributes, enabling different access patterns.
+6.	What is an inverted file?
+o	A file where each word is mapped to the list of records containing that word, commonly used in search engines.
+7.	What are coral rings and cellular partitions?
+o	These are methods used in databases for efficient partitioning and storing of data.
+8.	What is external sorting?
+o	Sorting large data sets that don't fit in memory by breaking them into smaller pieces, sorting them, and merging them.
+9.	What is a k-way merge?
+o	A technique used in external sorting to merge k sorted lists into one sorted list.
+________________________________________
+
